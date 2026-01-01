@@ -1,10 +1,10 @@
 #!/bin/bash
 
-file_name=${1:-""}
-file_name=${file_name##*/}
-
 command -v tsc >/dev/null || { echo "tsc not found"; exit 1;}
 command -v node >/dev/null || { echo "tsc not found"; exit 1;}
+
+file_name=${1:-""}
+file_name=${file_name##*/}
 
 if [[ "$file_name" == *.ts ]]; then
     echo "Compiling $file_name to ${file_name%.ts}.js..."
